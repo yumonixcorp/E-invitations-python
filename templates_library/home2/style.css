@@ -1,0 +1,84 @@
+/* Template "Blossom Watercolor" (home2): watercolor hero, countdown blooms, soft photo edges. */
+:root { --header-bg: #fdfdfd; }
+
+.hero--watercolor {
+  position: relative; overflow: hidden;
+  display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px;
+  min-height: calc(100vh - 94px); padding: 30px 60px 80px; background: #fdfdfd;
+}
+.hero--watercolor .hero-content { text-align: center; }
+.hero-sprig.floral { position: relative; display: block; width: 250px; height: 118px; margin: 0 auto 6px; }
+.hero--watercolor .hero-names { font-family: var(--font-script); font-size: 70px; line-height: 1.25; color: var(--rose); margin-bottom: 8px; }
+.hero--watercolor .hero-sub { font-size: 30px; color: var(--text); margin-bottom: 50px; }
+
+.bloom-countdown { justify-content: center; gap: 4px; }
+.bloom-countdown .unit {
+  position: relative; width: 150px; height: 150px; min-width: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.bloom-countdown .unit::before {
+  content: ""; position: absolute; inset: 0;
+  border-radius: 42% 58% 55% 45% / 52% 40% 60% 48%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, .75), transparent 30%),
+    radial-gradient(circle at 70% 75%, var(--c2), transparent 55%),
+    radial-gradient(circle at 50% 50%, var(--c1) 0%, var(--c2) 58%, transparent 72%);
+  opacity: .9; animation: bloom-morph 10s ease-in-out infinite;
+}
+.bloom-countdown .unit::after { content: ""; position: absolute; inset: 24px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, .95); }
+.bloom-countdown .unit:nth-child(1) { --c1: #bfe0ff; --c2: #5aa6f2; }
+.bloom-countdown .unit:nth-child(2) { --c1: #dbeeb4; --c2: #8fc155; }
+.bloom-countdown .unit:nth-child(3) { --c1: #ffe2b4; --c2: #f4ac4c; }
+.bloom-countdown .unit:nth-child(4) { --c1: #ffd0de; --c2: #ea7ea2; }
+.bloom-countdown .unit:nth-child(2)::before { animation-delay: -2.5s; }
+.bloom-countdown .unit:nth-child(3)::before { animation-delay: -5s; }
+.bloom-countdown .unit:nth-child(4)::before { animation-delay: -7.5s; }
+.bloom-countdown .unit b { position: relative; z-index: 1; font-size: 50px; color: #1d1d1d; }
+.bloom-countdown .unit span { position: relative; z-index: 1; font-size: 20px; color: #3a3a3a; }
+
+.hero--watercolor .hero-visual { position: relative; }
+.hero-watercolor-img {
+  position: relative; width: 100%; max-width: 680px; margin: 0 auto; aspect-ratio: 1 / 1.05;
+  -webkit-mask: radial-gradient(ellipse 50% 50% at 50% 50%, #000 58%, transparent 100%);
+  mask: radial-gradient(ellipse 50% 50% at 50% 50%, #000 58%, transparent 100%);
+}
+.hero-watercolor-img img { width: 100%; height: 100%; object-fit: cover; }
+.hero-watercolor-img .ph {
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, .8), transparent 40%),
+    radial-gradient(circle at 70% 65%, #f3b6c6, transparent 55%),
+    radial-gradient(circle at 30% 75%, #c9dcf2, transparent 50%),
+    linear-gradient(135deg, #fbe3ea, #f1cbd6);
+  font-size: clamp(70px, 10vw, 150px);
+}
+
+@keyframes bloom-morph {
+  50% { border-radius: 56% 44% 40% 60% / 45% 58% 42% 55%; transform: rotate(8deg) scale(1.03); }
+}
+
+@media (max-width: 1399px) {
+  .hero--watercolor { padding: 30px 30px 70px; }
+  .bloom-countdown .unit { width: 132px; height: 132px; }
+  .bloom-countdown .unit::after { inset: 18px; }
+  .bloom-countdown .unit b { font-size: 40px; }
+  .bloom-countdown .unit span { font-size: 18px; }
+}
+@media (max-width: 1199px) {
+  .hero--watercolor .hero-names { font-size: 56px; }
+  .hero--watercolor .hero-sub { font-size: 24px; margin-bottom: 36px; }
+  .bloom-countdown .unit { width: 120px; height: 120px; }
+  .bloom-countdown .unit::after { inset: 16px; }
+  .bloom-countdown .unit b { font-size: 34px; }
+  .bloom-countdown .unit span { font-size: 15px; }
+}
+@media (max-width: 991px) {
+  .hero--watercolor { grid-template-columns: 1fr; min-height: 0; padding: 50px 20px 70px; gap: 30px; }
+  .hero-watercolor-img { max-width: 520px; }
+}
+@media (max-width: 575px) {
+  .hero-sprig.floral { width: 190px; height: 90px; }
+  .hero--watercolor .hero-names { font-size: 40px; }
+  .hero--watercolor .hero-sub { font-size: 18px; margin-bottom: 26px; }
+  .bloom-countdown { max-width: 300px; margin: 0 auto; }
+  .bloom-countdown .unit { width: 130px; height: 130px; }
+}

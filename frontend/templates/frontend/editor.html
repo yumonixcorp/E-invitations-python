@@ -1,0 +1,44 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+{% block title %}Editor{% endblock %}
+{% block content %}
+<div class="editor" id="editor" data-invitation-id="{{ invitation_id }}">
+  <aside class="editor-form">
+    <div class="row-between">
+      <a href="{% url 'dashboard' %}" class="small">← Dashboard</a>
+      <span class="save-status" id="save-status">Loading…</span>
+    </div>
+    <h1 id="editor-title" style="font-size:24px;color:var(--plum);margin-top:10px">Edit invitation</h1>
+    <p class="lock-note">🔒 Colors, fonts, animations and layout are locked by the template. Edit your content below.</p>
+    <form id="fields" novalidate autocomplete="off"></form>
+  </aside>
+
+  <section class="editor-preview">
+    <div class="preview-bar">
+      <div class="chips" role="group" aria-label="Preview size">
+        <button type="button" class="chip is-active" data-device="mobile">📱 Mobile</button>
+        <button type="button" class="chip" data-device="desktop">🖥️ Desktop</button>
+      </div>
+      <div class="inv-actions" style="padding:0;margin:0">
+        <button type="button" class="btn btn-ghost btn-sm" id="save-btn">Save</button>
+        <button type="button" class="btn btn-gold btn-sm" id="deploy-btn">🚀 Deploy</button>
+      </div>
+    </div>
+    <div class="deploy-result" id="deploy-result" hidden style="margin:12px 16px 0">
+      <strong>🎉 Your invitation is live</strong>
+      <div><a class="live-link" id="live-link" target="_blank" rel="noopener"></a></div>
+      <div class="inv-actions">
+        <a class="btn btn-sm btn-whatsapp" id="wa-link" target="_blank" rel="noopener">📲 Share on WhatsApp</a>
+        <button type="button" class="btn btn-sm btn-ghost" id="copy-link">Copy link</button>
+        <a class="btn btn-sm btn-ghost" id="open-link" target="_blank" rel="noopener">Open ↗</a>
+      </div>
+      <p class="muted small" style="margin:8px 0 0">Changed something? Click Deploy again to update the same link.</p>
+    </div>
+    <div class="preview-stage is-mobile" id="stage">
+      <iframe id="preview" class="preview-frame" title="Invitation preview"
+              sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-presentation"></iframe>
+    </div>
+  </section>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{% static 'frontend/editor.js' %}"></script>{% endblock %}

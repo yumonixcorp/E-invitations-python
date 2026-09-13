@@ -1,0 +1,38 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<section class="auth-wrap">
+  <div class="card auth-card">
+    <div class="tabs" role="tablist">
+      <button type="button" class="tab is-active" data-mode="login" role="tab">Login</button>
+      <button type="button" class="tab" data-mode="signup" role="tab">Sign up</button>
+    </div>
+
+    <form id="email-form" class="stack" novalidate>
+      <h1 class="auth-title" id="auth-title">Welcome back</h1>
+      <p class="muted" id="auth-sub">We'll email you a 6-digit code.</p>
+      <label class="field">
+        <span>Email address</span>
+        <input type="email" name="email" autocomplete="email" required placeholder="you@example.com">
+      </label>
+      <button class="btn btn-block" type="submit">Send OTP</button>
+    </form>
+
+    <form id="otp-form" class="stack" novalidate hidden>
+      <h1 class="auth-title">Check your inbox</h1>
+      <p class="muted">Enter the code sent to <strong id="otp-email"></strong>. It is valid for 5 minutes.</p>
+      <label class="field">
+        <span>6-digit code</span>
+        <input type="text" name="otp" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="\d{6}" required class="otp-input">
+      </label>
+      <button class="btn btn-block" type="submit">Verify &amp; continue</button>
+      <div class="row-between small">
+        <button type="button" class="link-btn" id="change-email">← Change email</button>
+        <button type="button" class="link-btn" id="resend">Resend code</button>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{% static 'frontend/auth.js' %}"></script>{% endblock %}

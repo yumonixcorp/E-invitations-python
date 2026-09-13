@@ -1,0 +1,38 @@
+{% extends "frontend/base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Wedding · Engagement · Birthday · Housewarming</p>
+    <h1>Beautiful e-invitations,<br>live in <em>5 minutes</em>.</h1>
+    <p class="lead">Pick a designer template, add your names, photos, video and venue map,
+      and get a shareable link for WhatsApp. No design skills needed.</p>
+    <div class="actions">
+      <a class="btn btn-lg" href="{% url 'gallery' %}">Create your invitation</a>
+      <a class="btn btn-ghost btn-lg" href="{% url 'pricing' %}">See pricing</a>
+    </div>
+    <p class="muted small">Free: 1 invitation every month. No card required.</p>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <div class="phone">
+      <div class="phone-screen">
+        <span class="ph-flower">❀</span>
+        <span class="ph-small">Together with their families</span>
+        <span class="ph-names">Saran<br>&amp;<br>Keerthana</span>
+        <span class="ph-date">14 · 12 · 2026</span>
+        <span class="ph-btn">📍 View location</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps container">
+  <h2>How it works</h2>
+  <ol class="step-grid">
+    <li><span class="step-no">1</span><h3>Verify your email</h3><p>Sign in with a one-time code. No passwords to remember.</p></li>
+    <li><span class="step-no">2</span><h3>Pick a template</h3><p>10 ready designs. Colors and animations stay perfectly tuned.</p></li>
+    <li><span class="step-no">3</span><h3>Add your details</h3><p>Names, date, photos, video and map with a live preview.</p></li>
+    <li><span class="step-no">4</span><h3>Deploy &amp; share</h3><p>One click publishes your site. Share the link on WhatsApp.</p></li>
+  </ol>
+</section>
+{% endblock %}

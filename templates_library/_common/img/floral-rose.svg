@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320">
+  <defs>
+    <radialGradient id="rose" cx="45%" cy="40%" r="65%">
+      <stop offset="0" stop-color="#ffc9b3"/>
+      <stop offset=".55" stop-color="#f28b6e"/>
+      <stop offset="1" stop-color="#d5573f"/>
+    </radialGradient>
+    <radialGradient id="blossom" cx="50%" cy="50%" r="60%">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#f5a9bd"/>
+    </radialGradient>
+    <linearGradient id="beige" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#efe1c6"/>
+      <stop offset="1" stop-color="#c7a878"/>
+    </linearGradient>
+  </defs>
+
+  <!-- dried beige leaves -->
+  <g fill="url(#beige)" stroke="#b08e5e" stroke-width=".8" stroke-opacity=".5">
+    <path d="M160 170 C 120 120 118 60 150 12 C 176 62 180 120 160 170 Z"/>
+    <path d="M160 170 C 110 160 62 126 40 72 C 98 84 140 118 160 170 Z"/>
+    <path d="M160 170 C 212 150 250 110 262 58 C 206 76 172 116 160 170 Z"/>
+    <path d="M160 180 C 108 196 64 236 52 290 C 108 272 146 234 160 180 Z"/>
+    <path d="M170 180 C 222 196 270 226 300 270 C 240 274 196 240 170 180 Z"/>
+  </g>
+  <g fill="none" stroke="#a8844f" stroke-width="1" opacity=".55">
+    <path d="M160 170 C 150 120 148 70 150 14"/>
+    <path d="M160 170 C 120 140 80 110 42 74"/>
+    <path d="M160 170 C 196 140 230 104 260 60"/>
+    <path d="M160 180 C 124 214 88 250 54 288"/>
+    <path d="M170 180 C 214 208 256 240 298 268"/>
+  </g>
+
+  <!-- stamen sprays -->
+  <g stroke="#9c7a5a" stroke-width="1" fill="none" opacity=".8">
+    <path d="M150 170 L96 206"/><path d="M150 170 L90 186"/><path d="M152 172 L104 222"/>
+    <path d="M176 164 L224 196"/><path d="M178 168 L232 182"/>
+  </g>
+  <g fill="#7a5638">
+    <circle cx="96" cy="206" r="3"/><circle cx="90" cy="186" r="2.6"/><circle cx="104" cy="222" r="2.8"/>
+    <circle cx="224" cy="196" r="3"/><circle cx="232" cy="182" r="2.6"/>
+  </g>
+
+  <!-- main rose -->
+  <g transform="translate(160 176)">
+    <circle r="54" fill="url(#rose)"/>
+    <g fill="none" stroke="#c44b35" stroke-linecap="round" opacity=".7">
+      <path d="M-40 10 A 42 42 0 0 1 30 -34" stroke-width="3"/>
+      <path d="M40 -8 A 42 42 0 0 1 -24 38" stroke-width="3"/>
+      <path d="M-26 -8 A 28 28 0 0 1 22 -20" stroke-width="2.6"/>
+      <path d="M26 4 A 28 28 0 0 1 -16 24" stroke-width="2.6"/>
+      <path d="M-12 -2 A 13 13 0 0 1 12 -6" stroke-width="2.2"/>
+      <path d="M10 6 A 12 12 0 0 1 -8 10" stroke-width="2.2"/>
+    </g>
+  </g>
+
+  <!-- second smaller rose -->
+  <g transform="translate(222 232)">
+    <circle r="30" fill="url(#rose)"/>
+    <g fill="none" stroke="#c44b35" stroke-linecap="round" opacity=".7" stroke-width="2">
+      <path d="M-22 6 A 23 23 0 0 1 16 -18"/><path d="M22 -4 A 23 23 0 0 1 -12 20"/>
+      <path d="M-10 -2 A 11 11 0 0 1 10 -4"/>
+    </g>
+  </g>
+
+  <!-- pink blossoms -->
+  <g transform="translate(108 248)">
+    <g fill="url(#blossom)" stroke="#e38aa2" stroke-width=".8">
+      <ellipse cx="0" cy="-12" rx="8" ry="12"/>
+      <ellipse cx="0" cy="-12" rx="8" ry="12" transform="rotate(72)"/>
+      <ellipse cx="0" cy="-12" rx="8" ry="12" transform="rotate(144)"/>
+      <ellipse cx="0" cy="-12" rx="8" ry="12" transform="rotate(216)"/>
+      <ellipse cx="0" cy="-12" rx="8" ry="12" transform="rotate(288)"/>
+    </g>
+    <circle r="4" fill="#f2b33d"/>
+  </g>
+  <g transform="translate(206 128) scale(.75)">
+    <g fill="url(#blossom)" stroke="#e38aa2" stroke-width=".8">
+      <ellipse cx="0" cy="-12" rx="8" ry="12"/>
+      <ellipse cx="0" cy="-12" rx="8" ry="12" transform="rotate(72)"/>
+      <ellipse cx="0" cy="-12" rx="8" ry="12" transform="rotate(144)"/>
+      <ellipse cx="0" cy="-12" rx="8" ry="12" transform="rotate(216)"/>
+      <ellipse cx="0" cy="-12" rx="8" ry="12" transform="rotate(288)"/>
+    </g>
+    <circle r="4" fill="#f2b33d"/>
+  </g>
+</svg>

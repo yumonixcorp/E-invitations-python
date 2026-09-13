@@ -1,0 +1,16 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+{% block title %}Templates{% endblock %}
+{% block content %}
+<div class="container page">
+  <div class="page-head">
+    <div>
+      <h1>Choose a template</h1>
+      <p class="muted">Every design comes with tuned colors, fonts and animations. You add the content.</p>
+    </div>
+    <div class="chips" id="chips"></div>
+  </div>
+  <div class="tpl-grid" id="grid" aria-live="polite"></div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{% static 'frontend/gallery.js' %}"></script>{% endblock %}

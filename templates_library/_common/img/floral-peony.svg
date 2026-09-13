@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320">
+  <defs>
+    <radialGradient id="petal" cx="50%" cy="85%" r="95%">
+      <stop offset="0" stop-color="#fff0f3"/>
+      <stop offset=".45" stop-color="#f7b3c3"/>
+      <stop offset="1" stop-color="#e06487"/>
+    </radialGradient>
+    <radialGradient id="petalInner" cx="50%" cy="90%" r="90%">
+      <stop offset="0" stop-color="#ffe3ea"/>
+      <stop offset="1" stop-color="#f08ca6"/>
+    </radialGradient>
+    <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a9cdb2"/>
+      <stop offset="1" stop-color="#557f61"/>
+    </linearGradient>
+    <linearGradient id="leafDark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6e9a78"/>
+      <stop offset="1" stop-color="#3f6549"/>
+    </linearGradient>
+  </defs>
+
+  <!-- eucalyptus sprig -->
+  <path d="M250 18 C 238 90 222 150 186 214" fill="none" stroke="#7da486" stroke-width="3" stroke-linecap="round"/>
+  <g fill="url(#leaf)" opacity=".92">
+    <ellipse cx="252" cy="36" rx="15" ry="11" transform="rotate(-25 252 36)"/>
+    <ellipse cx="228" cy="52" rx="14" ry="10" transform="rotate(30 228 52)"/>
+    <ellipse cx="258" cy="76" rx="17" ry="12" transform="rotate(-15 258 76)"/>
+    <ellipse cx="222" cy="98" rx="17" ry="12" transform="rotate(25 222 98)"/>
+    <ellipse cx="250" cy="124" rx="19" ry="13" transform="rotate(-10 250 124)"/>
+    <ellipse cx="209" cy="146" rx="18" ry="13" transform="rotate(30 209 146)"/>
+    <ellipse cx="236" cy="170" rx="19" ry="14" transform="rotate(-5 236 170)"/>
+  </g>
+  <g fill="none" stroke="#557f61" stroke-width="1" opacity=".5">
+    <path d="M240 40 L262 32"/><path d="M216 56 L238 48"/><path d="M244 80 L272 72"/>
+    <path d="M206 102 L236 94"/><path d="M233 128 L268 120"/><path d="M193 150 L225 142"/>
+  </g>
+
+  <!-- leaves behind the flower -->
+  <path d="M150 212 C 96 196 52 226 22 292 C 86 290 128 258 150 212 Z" fill="url(#leafDark)"/>
+  <path d="M150 212 C 110 238 70 262 22 292" fill="none" stroke="#2f4f39" stroke-width="1.2" opacity=".45"/>
+  <path d="M178 226 C 214 262 214 292 196 318 C 162 292 154 258 178 226 Z" fill="url(#leaf)"/>
+  <path d="M178 226 C 190 262 196 290 196 318" fill="none" stroke="#2f4f39" stroke-width="1.2" opacity=".4"/>
+  <path d="M206 206 C 262 204 294 230 312 268 C 262 272 226 250 206 206 Z" fill="url(#leafDark)" opacity=".9"/>
+
+  <!-- peony -->
+  <g transform="translate(160 196)">
+    <g fill="url(#petal)" stroke="#d25579" stroke-width=".8" stroke-opacity=".35">
+      <path d="M0 0 C -46 -18 -62 -72 -20 -88 C -4 -94 4 -94 20 -88 C 62 -72 46 -18 0 0 Z" transform="rotate(-10)"/>
+      <path d="M0 0 C -46 -18 -62 -72 -20 -88 C -4 -94 4 -94 20 -88 C 62 -72 46 -18 0 0 Z" transform="rotate(62)"/>
+      <path d="M0 0 C -46 -18 -62 -72 -20 -88 C -4 -94 4 -94 20 -88 C 62 -72 46 -18 0 0 Z" transform="rotate(134)"/>
+      <path d="M0 0 C -46 -18 -62 -72 -20 -88 C -4 -94 4 -94 20 -88 C 62 -72 46 -18 0 0 Z" transform="rotate(206)"/>
+      <path d="M0 0 C -46 -18 -62 -72 -20 -88 C -4 -94 4 -94 20 -88 C 62 -72 46 -18 0 0 Z" transform="rotate(278)"/>
+    </g>
+    <g fill="url(#petalInner)" stroke="#d25579" stroke-width=".8" stroke-opacity=".3">
+      <path d="M0 0 C -32 -12 -42 -50 -14 -60 C -4 -64 4 -64 14 -60 C 42 -50 32 -12 0 0 Z" transform="rotate(26)"/>
+      <path d="M0 0 C -32 -12 -42 -50 -14 -60 C -4 -64 4 -64 14 -60 C 42 -50 32 -12 0 0 Z" transform="rotate(98)"/>
+      <path d="M0 0 C -32 -12 -42 -50 -14 -60 C -4 -64 4 -64 14 -60 C 42 -50 32 -12 0 0 Z" transform="rotate(170)"/>
+      <path d="M0 0 C -32 -12 -42 -50 -14 -60 C -4 -64 4 -64 14 -60 C 42 -50 32 -12 0 0 Z" transform="rotate(242)"/>
+      <path d="M0 0 C -32 -12 -42 -50 -14 -60 C -4 -64 4 -64 14 -60 C 42 -50 32 -12 0 0 Z" transform="rotate(314)"/>
+    </g>
+    <circle r="20" fill="#f6c14d"/>
+    <g fill="#e39a1f">
+      <circle cx="-8" cy="-6" r="3"/><circle cx="7" cy="-9" r="2.6"/><circle cx="10" cy="5" r="3"/>
+      <circle cx="-4" cy="9" r="2.6"/><circle cx="-12" cy="4" r="2.2"/><circle cx="2" cy="-1" r="2.4"/>
+    </g>
+  </g>
+
+  <!-- small bud -->
+  <g transform="translate(76 150) rotate(-30)">
+    <path d="M0 20 C -18 8 -16 -18 0 -26 C 16 -18 18 8 0 20 Z" fill="url(#petalInner)"/>
+    <path d="M0 22 C -10 30 -14 40 -12 52" fill="none" stroke="#557f61" stroke-width="2.5"/>
+    <path d="M-2 18 C -14 18 -20 10 -22 2 C -12 2 -4 8 -2 18 Z" fill="url(#leaf)"/>
+  </g>
+</svg>

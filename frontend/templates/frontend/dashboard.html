@@ -1,0 +1,31 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="container page">
+  <div class="page-head">
+    <div>
+      <p class="muted small" id="me-email"></p>
+      <h1>My invitations</h1>
+    </div>
+    <a class="btn" href="{% url 'gallery' %}">+ New invitation</a>
+  </div>
+
+  <div class="card quota-card" id="quota" hidden>
+    <div>
+      <strong id="quota-plan"></strong>
+      <div class="muted small" id="quota-text"></div>
+      <div class="quota-bar"><span id="quota-fill"></span></div>
+    </div>
+    <a class="btn btn-gold btn-sm" href="{% url 'pricing' %}" id="upgrade-btn">Upgrade plan</a>
+  </div>
+
+  <div id="list" class="inv-grid" aria-live="polite"></div>
+  <div id="empty" class="card empty" hidden>
+    <h2>No invitations yet</h2>
+    <p class="muted">Pick a template to create your first one.</p>
+    <a class="btn" href="{% url 'gallery' %}">Browse templates</a>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{% static 'frontend/dashboard.js' %}"></script>{% endblock %}

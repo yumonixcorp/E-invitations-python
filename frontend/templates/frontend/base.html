@@ -1,0 +1,32 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}E-Invite{% endblock %} · Digital invitations in minutes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'frontend/app.css' %}">
+  {% block head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+  <header class="site-header">
+    <a class="brand" href="{% url 'home' %}"><span class="brand-mark">💌</span> E-Invite</a>
+    <nav class="nav">
+      <a href="{% url 'gallery' %}">Templates</a>
+      <a href="{% url 'pricing' %}">Pricing</a>
+      <a href="{% url 'dashboard' %}" data-auth="in">Dashboard</a>
+      <button type="button" class="link-btn" data-auth="in" data-action="logout">Logout</button>
+      <a class="btn btn-sm" href="{% url 'login' %}" data-auth="out">Login</a>
+    </nav>
+  </header>
+
+  <main>{% block content %}{% endblock %}</main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="{% static 'frontend/api.js' %}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

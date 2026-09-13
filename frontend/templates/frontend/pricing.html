@@ -1,0 +1,20 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+{% block title %}Pricing{% endblock %}
+{% block content %}
+<div class="container page">
+  <div class="page-head">
+    <div>
+      <h1>Simple pricing</h1>
+      <p class="muted">Start free. Upgrade when you need more invitations in a month.</p>
+    </div>
+    <p class="muted small" id="current-plan"></p>
+  </div>
+  <div class="plan-grid" id="plans"></div>
+  <p class="muted small" id="payments-note" hidden>Online payments are not enabled on this server yet.</p>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
+<script src="{% static 'frontend/pricing.js' %}"></script>
+{% endblock %}

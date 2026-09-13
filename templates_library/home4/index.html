@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{share_title}}</title>
+  <meta name="description" content="{{share_description}}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{share_title}}">
+  <meta property="og:description" content="{{share_description}}">
+  {{#og_image}}<meta property="og:image" content="{{og_image}}">{{/og_image}}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Sail&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../_common/css/base.css">
+  <link rel="stylesheet" href="../_common/css/sections.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <button type="button" class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <a class="logo" href="#home">{{bride_name}} &amp; {{groom_name}}</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          {{#has_couple}}<li><a href="#couple">Couple</a></li>{{/has_couple}}
+          {{#has_story}}<li><a href="#story">Story</a></li>{{/has_story}}
+          {{#has_gallery}}<li><a href="#gallery">Gallery</a></li>{{/has_gallery}}
+          {{#rsvp_whatsapp}}<li><a href="#rsvp">RSVP</a></li>{{/rsvp_whatsapp}}
+          {{#has_events}}<li><a href="#events">Events</a></li>{{/has_events}}
+        </ul>
+      </nav>
+      <a class="theme-btn header-cta" href="{{#rsvp_whatsapp}}#rsvp{{/rsvp_whatsapp}}{{^rsvp_whatsapp}}#events{{/rsvp_whatsapp}}">Attend Now</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero--slider js-slider" id="home">
+      <div class="slides">
+        {{#hero_image}}<div class="slide"><img src="{{hero_image}}" alt="{{bride_name}} and {{groom_name}}"></div>{{/hero_image}}
+        {{#hero_image_2}}<div class="slide"><img src="{{hero_image_2}}" alt=""></div>{{/hero_image_2}}
+        {{#hero_image_3}}<div class="slide"><img src="{{hero_image_3}}" alt=""></div>{{/hero_image_3}}
+      </div>
+      <div class="slider-content">
+        <h1 class="hero-names reveal">{{bride_name}} &amp; {{groom_name}}</h1>
+        <p class="hero-sub reveal">{{hero_subtitle}} {{wedding_date_short}}</p>
+        {{#countdown_target}}
+          <div class="countdown reveal" data-countdown="{{countdown_target}}">
+            <div class="unit"><b data-unit="days">00</b><span>Days</span></div>
+            <div class="unit"><b data-unit="hours">00</b><span>Hours</span></div>
+            <div class="unit"><b data-unit="minutes">00</b><span>Min</span></div>
+            <div class="unit"><b data-unit="seconds">00</b><span>Sec</span></div>
+            <p class="countdown-done" data-countdown-done hidden>Just Married!</p>
+          </div>
+          {{/countdown_target}}
+      </div>
+      <button type="button" class="slider-arrow slider-prev" aria-label="Previous photo">&#8592;</button>
+      <button type="button" class="slider-arrow slider-next" aria-label="Next photo">&#8594;</button>
+    </section>
+
+    {{#has_couple}}
+    <section class="couple-section couple--heart section-padding" id="couple">
+      <div class="container">
+        <div class="couple-grid">
+          <div class="couple-text couple-text--left reveal">
+            <h3>{{#bride_full_name}}{{bride_full_name}}{{/bride_full_name}}{{^bride_full_name}}{{bride_name}}{{/bride_full_name}}</h3>
+            <p>{{bride_bio}}</p>
+            <ul class="social">
+              {{#bride_facebook}}<li><a href="{{bride_facebook}}" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.8 0-5 2.2-5 5v2H7v4h2v7h4v-7h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg></a></li>{{/bride_facebook}}
+              {{#bride_instagram}}<li><a href="{{bride_instagram}}" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm5.5-4a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg></a></li>{{/bride_instagram}}
+            </ul>
+          </div>
+          <div class="couple-pic reveal">
+            <span class="couple-pic__back" aria-hidden="true"></span>
+            <div class="couple-pic__inner">
+              {{#couple_photo}}<img src="{{couple_photo}}" alt="{{bride_name}} and {{groom_name}}">{{/couple_photo}}
+              {{^couple_photo}}<span class="ph">{{bride_name_initial}}<small>&amp;</small>{{groom_name_initial}}</span>{{/couple_photo}}
+            </div>
+          </div>
+          <div class="couple-text couple-text--right reveal">
+            <h3>{{#groom_full_name}}{{groom_full_name}}{{/groom_full_name}}{{^groom_full_name}}{{groom_name}}{{/groom_full_name}}</h3>
+            <p>{{groom_bio}}</p>
+            <ul class="social">
+              {{#groom_facebook}}<li><a href="{{groom_facebook}}" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.8 0-5 2.2-5 5v2H7v4h2v7h4v-7h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg></a></li>{{/groom_facebook}}
+              {{#groom_instagram}}<li><a href="{{groom_instagram}}" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm5.5-4a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg></a></li>{{/groom_instagram}}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    {{/has_couple}}
+
+    {{#has_video}}
+    <section class="video-section" id="video">
+      {{#video_cover}}<img class="video-bg" src="{{video_cover}}" alt="">{{/video_cover}}
+      {{^video_cover}}<span class="ph video-bg"></span>{{/video_cover}}
+      <button type="button" class="video-btn" data-video-embed="{{video_embed}}" data-video-file="{{video_file}}" aria-label="Play video">
+        <svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg>
+      </button>
+    </section>
+    {{/has_video}}
+
+    {{#has_story}}
+    <section class="story-section story--oval section-padding" id="story">
+      <div class="container">
+        <div class="section-title reveal"><span>Our Story</span><h2>How it Happened</h2></div>
+        <div class="story-list">
+          {{#story_1_title}}
+          <div class="story-item reveal">
+            <div class="story-img">
+              <div class="story-img__frame">{{#story_1_photo}}<img src="{{story_1_photo}}" alt="{{story_1_title}}" loading="lazy">{{/story_1_photo}}{{^story_1_photo}}<span class="ph">&hearts;</span>{{/story_1_photo}}</div>
+              <span class="floral floral--peony" aria-hidden="true"></span>
+            </div>
+            <div class="story-content"><span class="story-date">{{story_1_date}}</span><h3>{{story_1_title}}</h3><p>{{story_1_text}}</p></div>
+          </div>
+          {{/story_1_title}}
+          {{#story_2_title}}
+          <div class="story-item reveal">
+            <div class="story-img">
+              <div class="story-img__frame">{{#story_2_photo}}<img src="{{story_2_photo}}" alt="{{story_2_title}}" loading="lazy">{{/story_2_photo}}{{^story_2_photo}}<span class="ph">&hearts;</span>{{/story_2_photo}}</div>
+              <span class="floral floral--peony" aria-hidden="true"></span>
+            </div>
+            <div class="story-content"><span class="story-date">{{story_2_date}}</span><h3>{{story_2_title}}</h3><p>{{story_2_text}}</p></div>
+          </div>
+          {{/story_2_title}}
+          {{#story_3_title}}
+          <div class="story-item reveal">
+            <div class="story-img">
+              <div class="story-img__frame">{{#story_3_photo}}<img src="{{story_3_photo}}" alt="{{story_3_title}}" loading="lazy">{{/story_3_photo}}{{^story_3_photo}}<span class="ph">&hearts;</span>{{/story_3_photo}}</div>
+              <span class="floral floral--peony" aria-hidden="true"></span>
+            </div>
+            <div class="story-content"><span class="story-date">{{story_3_date}}</span><h3>{{story_3_title}}</h3><p>{{story_3_text}}</p></div>
+          </div>
+          {{/story_3_title}}
+        </div>
+      </div>
+    </section>
+    {{/has_story}}
+
+    {{#has_gallery}}
+    <section class="gallery-section section-padding pt-0" id="gallery">
+      <div class="container">
+        <div class="gallery-grid js-gallery">
+          {{#gallery_images}}<a class="gallery-item reveal" href="{{.}}" data-lightbox><img src="{{.}}" alt="Photo {{index}}" loading="lazy"></a>{{/gallery_images}}
+        </div>
+      </div>
+    </section>
+    {{/has_gallery}}
+
+    {{#has_people}}
+    <section class="team-section section-padding pt-0" id="people">
+      <div class="container">
+        <div class="section-title reveal"><span>Our Guest</span><h2>Bridesmaids &amp; Groomsmen</h2></div>
+        <div class="team-grid">
+          {{#person_1_name}}<div class="team-item reveal"><div class="team-img">{{#person_1_photo}}<img src="{{person_1_photo}}" alt="{{person_1_name}}" loading="lazy">{{/person_1_photo}}{{^person_1_photo}}<span class="ph">{{person_1_name_initial}}</span>{{/person_1_photo}}</div><h3>{{person_1_name}}</h3><span>{{person_1_role}}</span></div>{{/person_1_name}}
+          {{#person_2_name}}<div class="team-item reveal"><div class="team-img">{{#person_2_photo}}<img src="{{person_2_photo}}" alt="{{person_2_name}}" loading="lazy">{{/person_2_photo}}{{^person_2_photo}}<span class="ph">{{person_2_name_initial}}</span>{{/person_2_photo}}</div><h3>{{person_2_name}}</h3><span>{{person_2_role}}</span></div>{{/person_2_name}}
+          {{#person_3_name}}<div class="team-item reveal"><div class="team-img">{{#person_3_photo}}<img src="{{person_3_photo}}" alt="{{person_3_name}}" loading="lazy">{{/person_3_photo}}{{^person_3_photo}}<span class="ph">{{person_3_name_initial}}</span>{{/person_3_photo}}</div><h3>{{person_3_name}}</h3><span>{{person_3_role}}</span></div>{{/person_3_name}}
+          {{#person_4_name}}<div class="team-item reveal"><div class="team-img">{{#person_4_photo}}<img src="{{person_4_photo}}" alt="{{person_4_name}}" loading="lazy">{{/person_4_photo}}{{^person_4_photo}}<span class="ph">{{person_4_name_initial}}</span>{{/person_4_photo}}</div><h3>{{person_4_name}}</h3><span>{{person_4_role}}</span></div>{{/person_4_name}}
+        </div>
+      </div>
+    </section>
+    {{/has_people}}
+
+    {{#rsvp_whatsapp}}
+    <section class="rsvp-section rsvp--photo" id="rsvp">
+      <div class="rsvp-bg" aria-hidden="true">{{#rsvp_background}}<img src="{{rsvp_background}}" alt="">{{/rsvp_background}}{{^rsvp_background}}<span class="ph"></span>{{/rsvp_background}}</div>
+      <div class="container">
+        <div class="rsvp-box reveal">
+          <h2>Are You Attending?</h2>
+          {{#rsvp_note}}<p class="rsvp-intro">{{rsvp_note}}</p>{{/rsvp_note}}
+          <form class="rsvp-form" data-whatsapp="{{rsvp_whatsapp}}" novalidate>
+            <div class="form-grid">
+              <input type="text" name="name" placeholder="Your Name" autocomplete="name" aria-label="Your name">
+              <select name="guests" class="attending-only" aria-label="Number of guests">
+                <option value="">Number Of Guests</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+              </select>
+              <div class="radio-group full">
+                <label><input type="radio" name="attending" value="yes" checked> Yes, I will be there</label>
+                <label><input type="radio" name="attending" value="no"> Sorry, I can't come</label>
+              </div>
+              <select name="event" class="attending-only" aria-label="What will you be attending"><option value="">What Will You Be Attending</option></select>
+              <select name="meal" class="attending-only" aria-label="Meal preference">
+                <option value="">Meal Preferences</option><option>Vegetarian</option><option>Non-Vegetarian</option>
+              </select>
+              <textarea name="message" rows="1" class="full" placeholder="Your Wishes (optional)" aria-label="Your wishes"></textarea>
+            </div>
+            <div class="submit"><button type="submit" class="theme-btn">RSVP on WhatsApp</button></div>
+            <p class="rsvp-status" data-rsvp-status role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+    {{/rsvp_whatsapp}}
+
+    {{#has_events}}
+    <section class="event-section event--card section-padding" id="events">
+      <div class="container">
+        <div class="section-title reveal"><span>Our Wedding</span><h2>When &amp; Where</h2></div>
+        <div class="event-grid">
+          {{#event_1_title}}
+          <div class="event-item reveal">
+            <div class="event-img">{{#event_1_photo}}<img src="{{event_1_photo}}" alt="{{event_1_title}}" loading="lazy">{{/event_1_photo}}{{^event_1_photo}}<span class="ph">&hearts;</span>{{/event_1_photo}}</div>
+            <h3 class="event-title" data-event-title>{{event_1_title}}</h3>
+            <div class="event-text">
+              <p>{{event_1_date}}{{#event_1_time}}<br>{{event_1_time}}{{/event_1_time}}</p>
+              <p>{{event_1_location}}</p>
+              {{#event_1_location_embed}}<a class="see-location" href="{{event_1_location_directions}}" data-map-embed="{{event_1_location_embed}}" target="_blank" rel="noopener">See Location</a>{{/event_1_location_embed}}
+            </div>
+          </div>
+          {{/event_1_title}}
+          {{#event_2_title}}
+          <div class="event-item reveal">
+            <div class="event-img">{{#event_2_photo}}<img src="{{event_2_photo}}" alt="{{event_2_title}}" loading="lazy">{{/event_2_photo}}{{^event_2_photo}}<span class="ph">&hearts;</span>{{/event_2_photo}}</div>
+            <h3 class="event-title" data-event-title>{{event_2_title}}</h3>
+            <div class="event-text">
+              <p>{{event_2_date}}{{#event_2_time}}<br>{{event_2_time}}{{/event_2_time}}</p>
+              <p>{{event_2_location}}</p>
+              {{#event_2_location_embed}}<a class="see-location" href="{{event_2_location_directions}}" data-map-embed="{{event_2_location_embed}}" target="_blank" rel="noopener">See Location</a>{{/event_2_location_embed}}
+            </div>
+          </div>
+          {{/event_2_title}}
+          {{#event_3_title}}
+          <div class="event-item reveal">
+            <div class="event-img">{{#event_3_photo}}<img src="{{event_3_photo}}" alt="{{event_3_title}}" loading="lazy">{{/event_3_photo}}{{^event_3_photo}}<span class="ph">&hearts;</span>{{/event_3_photo}}</div>
+            <h3 class="event-title" data-event-title>{{event_3_title}}</h3>
+            <div class="event-text">
+              <p>{{event_3_date}}{{#event_3_time}}<br>{{event_3_time}}{{/event_3_time}}</p>
+              <p>{{event_3_location}}</p>
+              {{#event_3_location_embed}}<a class="see-location" href="{{event_3_location_directions}}" data-map-embed="{{event_3_location_embed}}" target="_blank" rel="noopener">See Location</a>{{/event_3_location_embed}}
+            </div>
+          </div>
+          {{/event_3_title}}
+        </div>
+      </div>
+    </section>
+    {{/has_events}}
+
+    {{#cta_title}}
+    <div class="cta-section">
+      <div class="cta-item">
+        {{#cta_background}}<img src="{{cta_background}}" alt="">{{/cta_background}}{{^cta_background}}<span class="ph"></span>{{/cta_background}}
+        <div class="cta-content reveal">
+          <h2>{{cta_title}}</h2>
+          <p>{{cta_text}}</p>
+          <a class="theme-btn theme-btn--light" href="{{#rsvp_whatsapp}}#rsvp{{/rsvp_whatsapp}}{{^rsvp_whatsapp}}#events{{/rsvp_whatsapp}}">Join With Us</a>
+        </div>
+      </div>
+    </div>
+    {{/cta_title}}
+  </main>
+
+  <footer class="site-footer">
+    {{#footer_background}}<img class="footer-bg" src="{{footer_background}}" alt="">{{/footer_background}}
+    <div class="footer-upper">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a class="logo" href="#home">{{bride_name}} &amp; {{groom_name}}</a>
+            <p>{{footer_message}}</p>
+          </div>
+          <div>
+            <h3>Links</h3>
+            <ul class="footer-links">
+              <li><a href="#home">Home</a></li>
+              {{#has_couple}}<li><a href="#couple">Couple</a></li>{{/has_couple}}
+              {{#has_story}}<li><a href="#story">Story</a></li>{{/has_story}}
+              {{#has_gallery}}<li><a href="#gallery">Gallery</a></li>{{/has_gallery}}
+              {{#rsvp_whatsapp}}<li><a href="#rsvp">RSVP</a></li>{{/rsvp_whatsapp}}
+              {{#has_events}}<li><a href="#events">Events</a></li>{{/has_events}}
+            </ul>
+          </div>
+          <div>
+            <h3>Contact</h3>
+            <ul class="footer-contact">
+              {{#contact_email}}<li><a href="mailto:{{contact_email}}">{{contact_email}}</a></li>{{/contact_email}}
+              {{#contact_phone}}<li><a href="tel:{{contact_phone}}">{{contact_phone}}</a></li>{{/contact_phone}}
+              {{#event_2_location}}<li>{{event_2_location}}</li>{{/event_2_location}}
+            </ul>
+          </div>
+          {{#has_gallery}}
+          <div>
+            <h3>Moments</h3>
+            <div class="footer-insta js-gallery">
+              {{#gallery_preview}}<a href="{{.}}" data-lightbox><img src="{{.}}" alt="Photo {{index}}" loading="lazy"></a>{{/gallery_preview}}
+            </div>
+          </div>
+          {{/has_gallery}}
+        </div>
+      </div>
+    </div>
+    <div class="footer-lower">
+      <div class="container"><p>&copy; {{year}} | {{bride_name}} &amp; {{groom_name}} | Made with love</p></div>
+    </div>
+  </footer>
+
+  <button type="button" class="back-to-top" aria-label="Back to top">&#8593;</button>
+  <script src="../_common/js/common.js"></script>
+</body>
+</html>
